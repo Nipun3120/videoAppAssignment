@@ -13,7 +13,7 @@ export const InputSection = () => {
     let file = e.target.files[0];
     let blobURL = URL.createObjectURL(file);
     setUploadedVideo(blobURL);
-    console.log(uploadedVideo, blobURL);
+    console.log("video duration: ", videoElement.current.duration);
   };
   const uploadSrtFile = (e) => {
     let file = e.target.files[0];
@@ -84,13 +84,20 @@ export const InputSection = () => {
       </div>
       {console.log("parent called")}
 
-      <div className="w-2/4 m-auto mt-5">
+      <div className="w-8/12 m-auto mt-5">
         <div className="actions flex flex-row-reverse">
           <Seekbar
             videoProgress={handleVideoProgress}
             videoState={playerState}
+            time={
+              videoElement.current === null
+                ? null
+                : videoElement.current.currentTime
+            }
             duration={
-              videoElement.current === null ? 0 : videoElement.current.duration
+              videoElement.current === null
+                ? null
+                : videoElement.current.duration
             }
           />
           <ControlButtons
