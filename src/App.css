@@ -1,0 +1,42 @@
+body {
+  background: #000000fa;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  color: white;
+}
+
+video {
+  /* width: 100%; */
+  border-radius: 10px;
+}
+
+.video-wrapper {
+  overflow: hidden;
+  background-color: black;
+  padding: 20px;
+}
+
+.video-wrapper:hover .controls {
+  transform: translateY(0%);
+}
+
+.mute-btn {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.mute-btn i {
+  background-color: none;
+  color: white;
+  font-size: 20px;
+}
